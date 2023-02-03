@@ -141,6 +141,25 @@ public class User_Registration {
 				
 	}
 	
+	// pattern for password rule 4 special character
+	
+	void special_Character() {
+								
+		Pattern p = Pattern.compile("[[a-z]([0-9]+)([A-Z]+)([!#*@$&]+)]{8,}");
+						
+			System.out.println("\n Enter Special character in the Password ");
+			String special = sc.next();
+						
+			Matcher m = p.matcher(special);
+						
+			if (m.matches()) {
+				System.out.println(" Special character Password is valid ");
+			}else {
+				System.out.println(" Special character Password is Invalid ");
+			}
+			
+	}
+	
 	
 	public static void main( String[] args) {
 		
@@ -153,6 +172,7 @@ public class User_Registration {
 		re.password();
 		re.upper_Case();
 		re.number();
+		re.special_Character();
 	
 	}
 }
