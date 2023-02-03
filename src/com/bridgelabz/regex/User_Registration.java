@@ -147,17 +147,36 @@ public class User_Registration {
 								
 		Pattern p = Pattern.compile("[[a-z]([0-9]+)([A-Z]+)([!#*@$&]+)]{8,}");
 						
-			System.out.println("\n Enter Special character in the Password ");
-			String special = sc.next();
+		System.out.println("\n Enter Special character in the Password ");
+		String special = sc.next();
 						
-			Matcher m = p.matcher(special);
+		Matcher m = p.matcher(special);
 						
-			if (m.matches()) {
-				System.out.println(" Special character Password is valid ");
-			}else {
-				System.out.println(" Special character Password is Invalid ");
-			}
+		if (m.matches()) {
+			System.out.println(" Special character Password is valid ");
+		}else {
+			System.out.println(" Special character Password is Invalid ");
+		}
 			
+	}
+	
+	// pattern for sample e-mail
+	
+	void sample_email() {
+		
+		Pattern p = Pattern.compile("^[0-9a-zA-Z]+([_+-.a-z0-9A-Z]+)*[@][a-zA-Z]+[.][a-z]{2,4}([.][a-z]{2})?");	
+			
+		System.out.println("\n Enter Sample Email: ");
+		String email = sc.next();
+			
+		Matcher m = p.matcher(email);
+			
+		if (m.find()) {
+			System.out.println(" Sample email is valid ");
+		}else {
+			System.out.println(" Sample email is invalid ");
+		}
+		
 	}
 	
 	
@@ -173,6 +192,7 @@ public class User_Registration {
 		re.upper_Case();
 		re.number();
 		re.special_Character();
+		re.sample_email();
 	
 	}
 }
