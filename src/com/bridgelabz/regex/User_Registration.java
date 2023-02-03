@@ -84,7 +84,7 @@ public class User_Registration {
 			
 	}
 	
-	// patter for password rule 1 of 8 characters
+	// pattern for password rule 1 of 8 characters
 	
 	void password() {
 			
@@ -103,6 +103,25 @@ public class User_Registration {
 			
 	}
 	
+	// pattern for password rule 2 upper case
+	
+	void upper_Case() {
+				
+		Pattern p = Pattern.compile("[[a-z][0-9][A-Z]+]{8,}");
+				
+		System.out.println("\n Enter Upper case in the Password ");
+		String upper = sc.next();
+				
+		Matcher m = p.matcher(upper);
+				
+		if (m.find()) {
+			System.out.println(" Uppercase Password is valid ");
+		}else {
+			System.out.println(" Uppercase Password is Invalid ");
+		}
+					
+	}
+	
 	
 	public static void main( String[] args) {
 		
@@ -113,6 +132,7 @@ public class User_Registration {
 		re.email();
 		re.mobile();
 		re.password();
+		re.upper_Case();
 	
 	}
 }
