@@ -46,6 +46,25 @@ public class User_Registration {
 			
 	}
 	
+	// pattern for email
+	
+	void email() {
+
+		Pattern p = Pattern.compile("^[abc][.a-z]*[@][bl][.][co][.a-z]*");	
+			
+		System.out.println("\n Enter Email: ");
+		String email = sc.next();
+		
+		Matcher m = p.matcher(email);
+			
+		if (m.find()) {
+			System.out.println(" email is valid ");
+		}else {
+			System.out.println(" email is invalid ");
+		}
+			
+	}
+	
 	
 	public static void main( String[] args) {
 		
@@ -53,6 +72,7 @@ public class User_Registration {
 		
 		re.fName();
 		re.lName();
+		re.email();
 	
 	}
 }
