@@ -84,6 +84,25 @@ public class User_Registration {
 			
 	}
 	
+	// patter for password rule 1 of 8 characters
+	
+	void password() {
+			
+		Pattern p = Pattern.compile("[[a-zA-z0-9]]{8,}");	
+			
+		System.out.println("\n Enter Password: ");
+		String password = sc.next();
+			
+		Matcher m = p.matcher(password);
+			
+		if (m.find()) {
+			System.out.println(" Password is valid ");
+		}else {
+			System.out.println(" Password is invalid ");
+		}
+			
+	}
+	
 	
 	public static void main( String[] args) {
 		
@@ -93,6 +112,7 @@ public class User_Registration {
 		re.lName();
 		re.email();
 		re.mobile();
+		re.password();
 	
 	}
 }
