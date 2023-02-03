@@ -27,12 +27,32 @@ public class User_Registration {
 		
 	}
 	
+	// pattern for last name
+	
+	void lName() {
+			
+		Pattern p = Pattern.compile("^[A-Z][a-z]{2,}");	
+			
+		System.out.println("\n Enter the Last Name: ");
+		String lname = sc.next();
+			
+		Matcher m = p.matcher(lname);
+			
+		if (m.find()) {
+			System.out.println(" last name is valid ");
+		}else {
+			System.out.println(" last name is invalid ");
+		}
+			
+	}
+	
 	
 	public static void main( String[] args) {
 		
 		User_Registration re = new User_Registration();
 		
 		re.fName();
+		re.lName();
 	
 	}
 }
