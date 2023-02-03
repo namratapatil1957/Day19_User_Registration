@@ -65,6 +65,25 @@ public class User_Registration {
 			
 	}
 	
+	// pattern for mobile
+	
+	void mobile() {
+		
+		Pattern p = Pattern.compile("^(91-)[6-9][0-9]{9}");	
+			
+		System.out.println("\n Enter Mobile number: ");
+		String mobile = sc.next();
+			
+		Matcher m = p.matcher(mobile);
+			
+		if (m.matches()) {
+			System.out.println(" mobile number is valid ");
+		}else {
+			System.out.println(" mobile number is invalid ");
+		}
+			
+	}
+	
 	
 	public static void main( String[] args) {
 		
@@ -73,6 +92,7 @@ public class User_Registration {
 		re.fName();
 		re.lName();
 		re.email();
+		re.mobile();
 	
 	}
 }
